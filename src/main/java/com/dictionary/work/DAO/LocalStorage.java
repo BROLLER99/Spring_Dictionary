@@ -1,6 +1,7 @@
 package com.dictionary.work.DAO;
 
 import com.dictionary.work.exeption.FileException;
+import org.springframework.stereotype.Component;
 
 import java.io.*;
 
@@ -10,6 +11,7 @@ import static com.dictionary.work.console.View.getNumberOfDictionary;
 /**
  * Класс реализует методы интерфейса InterfaceDictionary по работе с файлом
  */
+@Component
 public class LocalStorage implements Storage {
     private static final String CREATE_FILE_EXCEPTION = "Ошибка создания файла";
     private static final String WORDS_FILE = "words.txt";

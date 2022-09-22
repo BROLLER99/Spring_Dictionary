@@ -1,6 +1,7 @@
 package com.dictionary.work.config;
 
 import com.dictionary.work.Model.RuleOfDictionary;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +9,7 @@ import java.util.Map;
 /**
  * Класс предназначен для хранения номеров и правил словарей
  */
+@Component
 public class DictionaryConfig {
     private static final String FIRST_PATTERN = "[a-zA-Z]{4}";
     private static final String SECOND_PATTERN = "[0-9]{5}";

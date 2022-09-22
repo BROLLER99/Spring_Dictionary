@@ -4,6 +4,7 @@ import com.dictionary.work.config.DictionaryConfig;
 import com.dictionary.work.console.commands.FactoryOfCommands;
 import com.dictionary.work.console.commands.Invoker;
 import com.dictionary.work.exeption.FileException;
+import org.springframework.stereotype.Component;
 
 import java.io.Console;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 /**
  * Класс для работы с пользователем через консоль, предоставляет пользователю выбор словаря и действий внутри него
  */
-
+@Component
 public class View {
 
     private static final String MAIN_MENU = "Выберете действие: \n1 - Словарь №1 \n2 - Словарь №2 \n0 - Выход из программы";

@@ -3,6 +3,8 @@ package com.dictionary.work.console.commands;
 import com.dictionary.work.DAO.Storage;
 import com.dictionary.work.console.Commands;
 import com.dictionary.work.exeption.FileException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import static com.dictionary.work.console.View.getInputWord;
 import static com.dictionary.work.console.View.getPattern;
@@ -10,6 +12,7 @@ import static com.dictionary.work.console.View.getPattern;
 /**
  * Класс предназначен для создания и определения объекта выбранной команды
  */
+@Component
 public class FactoryOfCommands {
     private final static String COMMAND_EXCEPTION = "Выбран неверный пункт";
     Storage typeOfStorage;
@@ -19,6 +22,7 @@ public class FactoryOfCommands {
      *
      * @param typeOfStorage - объект хранящий тип хранения словаря
      */
+    @Autowired
     public FactoryOfCommands(Storage typeOfStorage) {
         this.typeOfStorage = typeOfStorage;
     }

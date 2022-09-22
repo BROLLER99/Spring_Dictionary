@@ -3,10 +3,13 @@ package com.dictionary.work.config;
 import com.dictionary.work.DAO.Storage;
 import com.dictionary.work.DAO.LocalStorage;
 import com.dictionary.work.DAO.RunTimeStorage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Класс определяет тип хранилища для словаря
  */
+@Component
 public class StorageConfig {
     private static final int MORE_THAN_ZERO_ARGUMENTS_ON_THE_COMMAND_LINE = 1;
     private static final int ZERO_ARGUMENTS_ON_THE_COMMAND_LINE = 0;
