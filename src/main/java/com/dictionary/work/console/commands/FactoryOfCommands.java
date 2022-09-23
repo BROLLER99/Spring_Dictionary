@@ -1,18 +1,13 @@
 package com.dictionary.work.console.commands;
 
 import com.dictionary.work.DAO.Storage;
+import com.dictionary.work.Model.ModelOfCommand;
 import com.dictionary.work.console.Commands;
-import com.dictionary.work.exeption.FileException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import static com.dictionary.work.console.View.getInputWord;
-import static com.dictionary.work.console.View.getPattern;
+import com.dictionary.work.exeption.CustomException;
 
 /**
  * Класс предназначен для создания и определения объекта выбранной команды
  */
-@Component
 public class FactoryOfCommands {
     private final static String COMMAND_EXCEPTION = "Выбран неверный пункт";
     Storage typeOfStorage;
@@ -22,7 +17,6 @@ public class FactoryOfCommands {
      *
      * @param typeOfStorage - объект хранящий тип хранения словаря
      */
-    @Autowired
     public FactoryOfCommands(Storage typeOfStorage) {
         this.typeOfStorage = typeOfStorage;
     }
@@ -30,23 +24,24 @@ public class FactoryOfCommands {
     /**
      * Метод определения объекта команды по выбранному пункту
      *
-     * @param command - передаваемое имя команды
+     * @param command        - передаваемое имя команды
+     * @param modelOfCommand - модель команды с параметрами для её выполнения
      * @return возвращает новый объект команды с определенными параметрами
      */
-    public Command<?> nameOfCommand(Commands command) {
+    public Command<?> nameOfCommand(Commands command, ModelOfCommand modelOfCommand) {
         switch (command) {
             case ADD_ELEMENT:
-                return new AddCommand(typeOfStorage, getInputWord(), getInputWord(), getPattern());
+                return new AddCommand(typeOfStorage, modelOfCommand.getKey(), modelOfCommand.getValue(), modelOfCommand.getPattern());
             case OUTPUT_ALL_ELEMENTS:
                 return new OutputAllCommand(typeOfStorage);
             case DELETE_ELEMENT:
-                return new DeleteCommand(typeOfStorage, getInputWord());
+                return new DeleteCommand(typeOfStorage, modelOfCommand.getKey());
             case SEARCH_ELEMENT:
-                return new SearchCommand(typeOfStorage, getInputWord());
+                return new SearchCommand(typeOfStorage, modelOfCommand.getKey());
             case EXIT:
                 return new ExitCommand();
             default:
-                throw new FileException(COMMAND_EXCEPTION);
+                throw new CustomException(COMMAND_EXCEPTION);
         }
     }
 }

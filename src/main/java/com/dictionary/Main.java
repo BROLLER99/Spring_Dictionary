@@ -1,13 +1,11 @@
 package com.dictionary;
 
+import com.dictionary.work.Model.ModelOfCommand;
 import com.dictionary.work.config.DictionaryConfig;
-import com.dictionary.work.config.SpringConfig;
 import com.dictionary.work.console.View;
 import com.dictionary.work.console.commands.FactoryOfCommands;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
 
-//import static com.dictionary.work.config.StorageConfig.createStorage;
+import static com.dictionary.work.config.StorageConfig.createStorage;
 
 
 /**
@@ -20,12 +18,10 @@ public class Main {
      * @param args Параметры командной строки
      */
     public static void main(String[] args) {
-//        FactoryOfCommands factoryOfCommands = new FactoryOfCommands(createStorage(args));
-//        DictionaryConfig dictionaryConfig = new DictionaryConfig();
-//        View view = new View(dictionaryConfig, factoryOfCommands);
-//        view.startApp();
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        View view = (View) context.getBean("view");
+        ModelOfCommand modelOfCommand = new ModelOfCommand();
+        FactoryOfCommands factoryOfCommands = new FactoryOfCommands(createStorage(args));
+        DictionaryConfig dictionaryConfig = new DictionaryConfig();
+        View view = new View(dictionaryConfig, factoryOfCommands, modelOfCommand);
         view.startApp();
     }
 }
