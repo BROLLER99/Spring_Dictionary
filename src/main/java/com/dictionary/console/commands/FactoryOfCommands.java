@@ -1,9 +1,9 @@
-package com.dictionary.work.console.commands;
+package com.dictionary.console.commands;
 
-import com.dictionary.work.DAO.Storage;
-import com.dictionary.work.Model.ModelOfCommand;
-import com.dictionary.work.console.Commands;
-import com.dictionary.work.exeption.CustomException;
+import com.dictionary.DAO.Storage;
+import com.dictionary.model.ModelOfCommand;
+import com.dictionary.console.Commands;
+import com.dictionary.exeption.CustomException;
 
 /**
  * Класс предназначен для создания и определения объекта выбранной команды

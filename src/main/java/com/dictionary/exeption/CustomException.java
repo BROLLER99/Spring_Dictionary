@@ -1,4 +1,4 @@
-package com.dictionary.work.exeption;
+package com.dictionary.exeption;
 
 /**
  * Класс предназначен для создания своего исключения для защиты приложения

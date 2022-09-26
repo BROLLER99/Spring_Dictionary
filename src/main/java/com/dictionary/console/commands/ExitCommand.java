@@ -1,4 +1,4 @@
-package com.dictionary.work.console.commands;
+package com.dictionary.console.commands;
 
 /**
  * Класс реализует метод интерфейса Command выход из программы

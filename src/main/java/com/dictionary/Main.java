@@ -1,12 +1,8 @@
 package com.dictionary;
 
-import com.dictionary.work.Model.ModelOfCommand;
-import com.dictionary.work.config.DictionaryConfig;
-import com.dictionary.work.console.View;
-import com.dictionary.work.console.commands.FactoryOfCommands;
-
-import static com.dictionary.work.config.StorageConfig.createStorage;
-
+import com.dictionary.config.SpringConfig;
+import com.dictionary.console.View;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Точка входа в программу
@@ -18,10 +14,8 @@ public class Main {
      * @param args Параметры командной строки
      */
     public static void main(String[] args) {
-        ModelOfCommand modelOfCommand = new ModelOfCommand();
-        FactoryOfCommands factoryOfCommands = new FactoryOfCommands(createStorage(args));
-        DictionaryConfig dictionaryConfig = new DictionaryConfig();
-        View view = new View(dictionaryConfig, factoryOfCommands, modelOfCommand);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        View view = (View) context.getBean("view");
         view.startApp();
     }
 }

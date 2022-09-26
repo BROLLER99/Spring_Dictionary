@@ -1,8 +1,6 @@
-package com.dictionary.work.DAO;
+package com.dictionary.DAO;
 
-/**
- * Интерфейс определяет методы для работы со словарем
- */
+
 public interface Storage {
     String ADD_EXCEPTION = "Ошибка добавления элемента";
     String DELETE_EXCEPTION = "Ошибка удаления элемента";

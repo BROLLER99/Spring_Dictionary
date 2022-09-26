@@ -1,6 +1,6 @@
-package com.dictionary.work.console.commands;
+package com.dictionary.console.commands;
 
-import com.dictionary.work.DAO.Storage;
+import com.dictionary.DAO.Storage;
 
 
 /**

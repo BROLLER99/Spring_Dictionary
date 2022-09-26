@@ -1,10 +1,12 @@
-package com.dictionary.work.console;
+package com.dictionary.console;
 
-import com.dictionary.work.Model.ModelOfCommand;
-import com.dictionary.work.config.DictionaryConfig;
-import com.dictionary.work.console.commands.FactoryOfCommands;
-import com.dictionary.work.console.commands.Invoker;
-import com.dictionary.work.exeption.CustomException;
+import com.dictionary.model.ModelOfCommand;
+import com.dictionary.config.DictionaryConfig;
+import com.dictionary.console.commands.FactoryOfCommands;
+import com.dictionary.console.commands.Invoker;
+import com.dictionary.exeption.CustomException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.Console;
 import java.util.NoSuchElementException;
@@ -15,7 +17,7 @@ import java.util.Scanner;
 /**
  * Класс для работы с пользователем через консоль, предоставляет пользователю выбор словаря и действий внутри него
  */
-
+@Component
 public class View {
 
     private static final String MAIN_MENU = "Выберете действие: \n1 - Словарь №1 \n2 - Словарь №2 \n0 - Выход из программы";
@@ -37,6 +39,7 @@ public class View {
      * @param dictionaryConfig  объект для работы с правилами словарей
      * @param factoryOfCommands объект выбора исполняемой команды
      */
+    @Autowired
     public View(DictionaryConfig dictionaryConfig, FactoryOfCommands factoryOfCommands, ModelOfCommand modelOfCommand) {
         this.dictionaryConfig = dictionaryConfig;
         this.factoryOfCommands = factoryOfCommands;

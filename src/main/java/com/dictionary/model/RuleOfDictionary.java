@@ -1,4 +1,4 @@
-package com.dictionary.work.Model;
+package com.dictionary.model;
 
 /**
  * Класс для хранения правил словаря

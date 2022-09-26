@@ -1,4 +1,4 @@
-package com.dictionary.work.console;
+package com.dictionary.console;
 
 /**
  * Перечисление команд для работы со словарем
