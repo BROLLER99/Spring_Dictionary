@@ -1,7 +1,6 @@
 package com.dictionary.DAO;
 
 import com.dictionary.exeption.CustomException;
-import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.regex.PatternSyntaxException;
@@ -12,8 +11,8 @@ import static com.dictionary.console.View.getNumberOfDictionary;
 /**
  * Класс реализует методы интерфейса InterfaceDictionary по работе с файлом
  */
-@Component
 public class LocalStorage implements Storage {
+    private static final String FILE_PATH = "./src/main/resources/";
     private static final String CREATE_FILE_EXCEPTION = "Ошибка создания файла";
     private static final String SPLIT_EXCEPTION = "Ошибка разделения строки";
     private static final String WORDS_FILE = "words.txt";
@@ -136,7 +135,7 @@ public class LocalStorage implements Storage {
 
     private File createFile() throws CustomException {
         try {
-            File file = new File(nameOfFile());
+            File file = new File(FILE_PATH,nameOfFile());
             if (!file.exists() && !file.createNewFile()) {
                 throw new CustomException(CREATE_FILE_EXCEPTION);
             }
