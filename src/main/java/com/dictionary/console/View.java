@@ -30,7 +30,6 @@ public class View {
     private static int numberOfDictionary;
     private final DictionaryConfig dictionaryConfig;
     private final FactoryOfCommands factoryOfCommands;
-    private final ModelOfCommand modelOfCommand;
     static Scanner scanner;
 
     /**
@@ -40,10 +39,9 @@ public class View {
      * @param factoryOfCommands объект выбора исполняемой команды
      */
     @Autowired
-    public View(DictionaryConfig dictionaryConfig, FactoryOfCommands factoryOfCommands, ModelOfCommand modelOfCommand) {
+    public View(DictionaryConfig dictionaryConfig, FactoryOfCommands factoryOfCommands) {
         this.dictionaryConfig = dictionaryConfig;
         this.factoryOfCommands = factoryOfCommands;
-        this.modelOfCommand = modelOfCommand;
     }
 
     /**
@@ -53,6 +51,7 @@ public class View {
      */
     public void startApp() throws CustomException {
         try {
+            ModelOfCommand modelOfCommand = new ModelOfCommand();
             String pattern = mainMenu();
             while (true) {
                 System.out.println(dictionaryConfig.getMapEntry(numberOfDictionary + "").getDescription());

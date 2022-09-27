@@ -1,7 +1,6 @@
 package com.dictionary.DAO;
 
 import com.dictionary.exeption.CustomException;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,6 @@ import java.util.Map;
 /**
  * Класс реализует методы интерфейса InterfaceDictionary по работе с map
  */
-@Component
 public class RunTimeStorage implements Storage {
     /**
      * Объект dictionary который будет хранить коллекцию Map

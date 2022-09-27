@@ -4,13 +4,15 @@ import com.dictionary.DAO.Storage;
 import com.dictionary.model.ModelOfCommand;
 import com.dictionary.console.Commands;
 import com.dictionary.exeption.CustomException;
+import org.springframework.stereotype.Component;
 
 /**
  * Класс предназначен для создания и определения объекта выбранной команды
  */
+@Component
 public class FactoryOfCommands {
     private final static String COMMAND_EXCEPTION = "Выбран неверный пункт";
-    Storage typeOfStorage;
+     Storage typeOfStorage;
 
     /**
      * Конструктор задает состояние объекта необходимыми параметрами для определения объекта команды

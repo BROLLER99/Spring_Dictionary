@@ -1,7 +1,6 @@
 package com.dictionary.DAO;
 
 import com.dictionary.exeption.CustomException;
-import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.regex.PatternSyntaxException;
@@ -12,7 +11,6 @@ import static com.dictionary.console.View.getNumberOfDictionary;
 /**
  * Класс реализует методы интерфейса InterfaceDictionary по работе с файлом
  */
-@Component
 public class LocalStorage implements Storage {
     private static final String FILE_PATH = "./src/main/resources/";
     private static final String CREATE_FILE_EXCEPTION = "Ошибка создания файла";

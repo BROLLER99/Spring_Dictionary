@@ -1,11 +1,8 @@
 package com.dictionary.model;
 
-import org.springframework.stereotype.Component;
-
 /**
  * Класс для хранения параметров команды
  */
-@Component
 public class ModelOfCommand {
 
     private String key;
