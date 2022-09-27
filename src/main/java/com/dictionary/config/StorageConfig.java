@@ -1,8 +1,8 @@
-package com.dictionary.work.config;
+package com.dictionary.config;
 
-import com.dictionary.work.DAO.Storage;
-import com.dictionary.work.DAO.LocalStorage;
-import com.dictionary.work.DAO.RunTimeStorage;
+import com.dictionary.DAO.Storage;
+import com.dictionary.DAO.LocalStorage;
+import com.dictionary.DAO.RunTimeStorage;
 
 /**
  * Класс определяет тип хранилища для словаря
